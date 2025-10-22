@@ -3,7 +3,7 @@ import mediapipe as mp
 import time
 import os
 
-folderPath = "Smart-Mirror\menutry"
+folderPath = "D:\Smart-Mirror\Menu"
 myList = os.listdir(folderPath)
 overlay = []
 for imPath in myList:
