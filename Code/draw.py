@@ -1,5 +1,6 @@
 import cv2 as cv
 import mediapipe as mp
+import numpy as np
 import time
 import os
 
@@ -52,7 +53,11 @@ while True:
         # torsoHeight = (((lsx - rhx)**2)+((lsy-rhy)**2))**0.5
 
         # resizedGarment = cv.resize(garment, (torsoWidth, torsoHeight))
-        cv.rectangle(img, (lsx,lsy), (rhx,rhy), tshirtColor, -1)
+
+        pts = np.array([[rsx, rsy], [lsx, lsy], [lhx, lhy], [rhx, rhy]], np.int32)
+        cv.fillPoly(img, [pts], tshirtColor)
+
+        # cv.rectangle(img, (lsx,lsy), (rhx,rhy), tshirtColor, -1)
         mpDraw.draw_landmarks(img,  resultsP.pose_landmarks, mpPose.POSE_CONNECTIONS)
 
 
