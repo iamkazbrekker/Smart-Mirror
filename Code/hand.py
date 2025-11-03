@@ -7,9 +7,9 @@ video = cv.VideoCapture(0)
 video.set(3, wcam)
 video.set(4, hcam)
 
-mpHands = mp.solutions.hands
+mpHands = mp.solutions.hands # type: ignore
 hands = mpHands.Hands()
-mpDraw = mp.solutions.drawing_utils
+mpDraw = mp.solutions.drawing_utils # type: ignore
 pT = 0
 fingList = [8,12,16,20]
 

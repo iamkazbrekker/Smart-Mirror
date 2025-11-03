@@ -3,10 +3,9 @@ import mediapipe as mp
 import numpy as np
 import time
 import os
-import json
 
-folderPath = r"D:\Smart-Mirror\Menu"
-tshirtPath = r"D:\Smart-Mirror\assets"
+folderPath = r"C:\Users\kazbr\projects\Smart-Mirror\Menu"
+tshirtPath = r"C:\Users\kazbr\projects\Smart-Mirror\assets"
 
 myList = os.listdir(folderPath)
 tList = os.listdir(tshirtPath)
@@ -66,7 +65,7 @@ while True:
         torsoWidth = int((((lsx - rsx) ** 2) + ((lsy - rsy) ** 2)) ** 0.5) * 2
         torsoHeight = int((((lsx - rhx) ** 2) + ((lsy - rhy) ** 2)) ** 0.5) * 2
 
-        scale_w, scale_h = 1.4, 1.7
+        scale_w, scale_h = 1, 1
         tshirt_width = int(torsoWidth * scale_w)
         tshirt_height = int(torsoHeight * scale_h)
 
